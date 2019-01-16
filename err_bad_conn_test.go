@@ -31,7 +31,7 @@ func TestInsertWhenErrBadConnIsReturned(t *testing.T) {
 		t.Errorf("an error '%s' was not expected while opening a transaction", err)
 	}
 
-	stmt, err := conn.PrepareContext(context.Background(), "INSERT INTO mytable(a, b) VALUES (?, ?)") // on purpose not in tx
+	stmt, err := conn.PrepareContext(context.Background(), "INSERT INTO mytable(a, b) VALUES (?, ?)") // on purpose, not in tx
 	if err != nil {
                 t.Errorf("an error '%s' was not expected while preparing statement", err)
         }
